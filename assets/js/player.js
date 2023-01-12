@@ -294,9 +294,20 @@ nextButton.addEventListener('click', () => {
     }
 });
 
+const resetTracks = () => {
+    trackPlaying = 0;
+    duration = '0:00';
+    coverContainer.classList.remove('spin-animation');
+    document.querySelector('#seekbar div.seekbar').style.flexBasis = '0%';
+    
+    toggleIndicator.setAttribute('class', 'play-icon');
+}
+
 nativePlayer.addEventListener('ended', () => {
-    if (trackPlaying < playlist.length) {
+    if (trackPlaying + 1 < playlist.length) {
         trackPlaying = parseInt(trackPlaying) + 1;
+
+        console.log(trackPlaying);
 
         let card = '<div class="notification-card">';
         card += '<div class="cover-container">';
@@ -333,10 +344,9 @@ nativePlayer.addEventListener('ended', () => {
         timeDuration.innerHTML = playlist[trackPlaying].duration;
         toggleStatusPlayer(); // Update status player.
     } else {
-        coverContainer.classList.add('spin-animation');
-        toggleStatusPlayer();
+        resetTracks();
     }
-})
+});
 
 const updateTime = () => {
     let minute =  Math.floor(nativePlayer.currentTime / 60);
