@@ -8,4 +8,4 @@ Visitar página: [HTML Music Player](https://devalvez.github.io/html-music-playe
 
 <img src="./previews/tablet.jpg" alt="tablet.jpg" width="250px" align="center" style="margin-right: 10px" />
 
-<img src="./previews/screen.jpg" alt="screen.jpg" width="320px" align="right" />
+<img src="./previews/screen.jpg" alt="screen.jpg" width="320px" />
