@@ -27,6 +27,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .spin-animation {
@@ -316,4 +317,95 @@ body {
 .notification-card .details-container h5.normal {
   color: #606060;
   font-weight: normal;
+}
+
+
+@media(max-width: 920px) {
+  .player-container .player {
+    border-radius: 0px;
+    display: flex;
+    width: 100%;
+  }
+  .player-container .player .player-wrapper .playlist-container {
+    min-height: 90vh;
+  }
+}
+
+@media(max-width: 570px) {
+  .player-container .player {
+    border-radius: 0px;
+  }
+  .player-container .player .player-wrapper {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  .player-container .player .player-wrapper .playlist-container {
+    min-height: 30vh;
+  }
+  .player-container .player .player-wrapper .playlist-container {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+  }
+  .player-container .player .player-wrapper .current-track-info {
+    width: 100%;
+  }
+  .player-panel-container {
+    position: relative;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--greenblue);
+  }
+  .play-icon {
+    width: 25px;
+    height: 25px;
+    background: url(../images/button-icons.svg) no-repeat;
+    background-size: 152px;
+    border-radius: 0px;
+    background-position-y: 0px;
+    background-position-x: -85px;
+  }
+  .pause-icon {
+    width: 25px;
+    height: 25px;
+    background: url(../images/button-icons.svg) no-repeat;
+    background-size: 152px;
+    background-position-y: 0px;
+    background-position-x: -129px;
+    border-radius: 0px;
+  }
+  .backward-icon {
+    width: 38px;
+    height: 38px;
+    background: url(../images/button-icons.svg) no-repeat;
+    background-size: 180px;
+    border-radius: 50px;
+    background-position-y: 5px;
+    background-position-x: 4px;
+  }
+  .forward-icon {
+    width: 38px;
+    height: 38px;
+    background: url(../images/button-icons.svg) no-repeat;
+    background-size: 180px;
+    border-radius: 50px;
+    background-position-y: 5px;
+    background-position-x: -45px;
+  }
+  .current-track-info h3.track-title {
+    color: var(--darkgreenblue);
+  }
+  .player-panel-container .player-panel .player-current-track-details {
+    display: none;
+  }
+  .player-panel-container .player-panel .player-controls {
+    width: 60%;
+  }
+  .player-panel-container .player-panel .player-timers {
+    width: 40%;
+  } 
 }
