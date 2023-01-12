@@ -2,7 +2,7 @@
 const playlist = [
     {
         id: 1,
-        title: "Pagan Part II",
+        title: "Pagan Part II (demo)",
         album: "Causa",
         artist: "Vitalism",
         duration: "1:30",
@@ -11,7 +11,7 @@ const playlist = [
     },
     {
         id: 2,
-        title: "Ego Death feat. Steve Vai",
+        title: "Ego Death feat. Steve Vai (demo)",
         album: "EP",
         artist: "Polyphia",
         duration: "1:30",
@@ -20,7 +20,7 @@ const playlist = [
     },
     {
         id: 3,
-        title: "Until We Say Goodbye",
+        title: "Until We Say Goodbye (demo)",
         album: "Engine Of Creation",
         artist: "Joe Satriani",
         duration: "1:30",
@@ -97,7 +97,6 @@ const toggleStatusPlayer = () => {
 // Define music by selection.
 const selectMusic = (index) => {
     trackPlaying = index;
-    console.log(trackPlaying);
 
     let card = '<div class="notification-card">';
     card += '<div class="cover-container">';
@@ -165,8 +164,6 @@ previousButton.addEventListener('click', () => {
             timer: 3500
         });
 
-
-        console.log(trackPlaying);
         nativePlayer.setAttribute('src', playlist[trackPlaying].track);
         // trackCover.setAttribute('src', art);
         trackCover.setAttribute('src', playlist[trackPlaying].art);
@@ -343,8 +340,8 @@ nativePlayer.addEventListener('ended', () => {
 
 const updateTime = () => {
     let minute =  Math.floor(nativePlayer.currentTime / 60);
-    let second = Math.floor(nativePlayer.currentTime % 60) < 10 ? '0'+Math.floor(nativePlayer.currentTime % 60) : Math.floor(nativePlayer.currentTime % 60);
-   let liveTime = minute+':'+ second;
+    let second = Math.floor(nativePlayer.currentTime % 60) < 10 ? '0' + Math.floor(nativePlayer.currentTime % 60) : Math.floor(nativePlayer.currentTime % 60);
+    let liveTime = minute + ':' + second;
     timeExec.innerHTML = liveTime;
 }
 
